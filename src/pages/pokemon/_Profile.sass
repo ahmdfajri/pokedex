@@ -1,0 +1,55 @@
+.Profile
+    padding-top: 20px
+    
+.Profile__info
+    display: flex
+
+.Profile__sprite
+    min-width: 96px
+    min-height: 96px
+    border-radius: 96px
+    background-color: $white
+
+.Profile__action
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: stretch
+    width: 100%
+    min-height: 96px
+
+    > .Buttom
+        margin-bottom: 0
+
+.Profile__name
+    text-transform: uppercase
+    text-align: center
+    margin-bottom: 10px
+    font-weight: 600
+
+.Profile__table
+    width: 100%
+    margin: 10px auto
+    background-color: $white
+    color: #222
+    border-radius: 10px
+    border: 1px solid darken($color-secondary, 50%)
+    border-bottom-width: 3px
+    
+    th
+        padding: 5px 10px
+        text-align: left
+
+    tr
+        border-bottom: 1px solid #ccc
+        
+    td
+        padding: 5px 10px
+
+    a
+        color: $color-secondary
+        text-decoration: none
+
+        &:hover
+            color: darken($color-secondary, 15%)
+            text-decoration: underline

@@ -1,0 +1,335 @@
+body {
+  font-family: sans-serif; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto; }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  background-color: #E30000;
+  color: #fff;
+  height: 100vh; }
+
+.App__content {
+  flex: 1;
+  overflow: auto; }
+
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  padding: 0 30px;
+  min-height: 36px;
+  text-align: center;
+  min-height: 40px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  background-color: #4D8DFF;
+  border: 1px solid #001c4d;
+  border-bottom-width: 3px;
+  border-radius: 10px;
+  cursor: pointer; }
+  .Button:hover {
+    background-color: #015cff; }
+  .Button:active {
+    opacity: .5; }
+
+.Header {
+  position: relative;
+  background-color: #E30000;
+  color: #fff;
+  border-bottom: 5px solid #88001c;
+  box-shadow: 0 2px 0 #3B000C; }
+  .Header:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3B000C; }
+
+.Header__container {
+  display: flex;
+  align-items: center;
+  min-height: 56px; }
+
+.Header__dot {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 40px;
+  background-color: #4D8DFF;
+  border: 5px solid #fff;
+  margin-right: 30px;
+  transition: background-color 50ms ease;
+  animation: header-dot-animation 500ms ease infinite alternate; }
+  .Header__dot:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.75); }
+
+@keyframes header-dot-animation {
+  from {
+    background-color: #4D8DFF; }
+  to {
+    background-color: #9abeff; } }
+
+.Navigation {
+  position: relative;
+  background-color: #E30000;
+  color: #fff;
+  border-top: 1px solid #88001c;
+  box-shadow: 0 -2px 0 #3B000C; }
+  .Navigation:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3B000C; }
+
+.Navigation__container {
+  display: flex;
+  align-items: center;
+  min-height: 56px; }
+
+.Navigation__list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0;
+  margin: 10px 0;
+  list-style: none; }
+
+.Navigation__item {
+  flex: 1; }
+  .Navigation__item:first-child > .Navigation__link {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; }
+  .Navigation__item:last-child > .Navigation__link {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right: none; }
+
+.Navigation__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 40px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  background-color: #4D8DFF;
+  border-right: 1px solid #001c4d;
+  border-bottom: 3px solid #001c4d; }
+  .Navigation__link:hover {
+    background-color: #015cff; }
+
+.Navigation__icon {
+  height: 30px;
+  width: auto; }
+
+.Loading {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto;
+  background-image: url("./components/loading/pokeball.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain; }
+
+.Loading--play {
+  animation: spin 1s linear infinite; }
+
+.Loading--catch {
+  animation: catch 1s ease-in-out infinite alternate; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(350deg); } }
+
+@keyframes catch {
+  0% {
+    transform: rotate(-30deg); }
+  25% {
+    transform: rotate(0deg); }
+  75% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(30deg); } }
+
+.Item {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 40px;
+  text-transform: uppercase;
+  background-color: #fff;
+  margin-bottom: 1px;
+  border-radius: 5px;
+  padding: 0 0 0 20px;
+  box-sizing: border-box; }
+
+.Item__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 1;
+  color: #4D8DFF; }
+
+.Item__add,
+.Item__remove {
+  width: 40px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  background-color: #4D8DFF;
+  color: #fff;
+  font-size: 26px; }
+
+.Item__remove {
+  background-color: #ff6464; }
+
+.All__list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px; }
+
+.All__filter {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #4D8DFF; }
+
+.Home__container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; }
+
+.Home__clean {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px; }
+  .Home__clean > img {
+    width: 100px;
+    height: auto; }
+  .Home__clean > p {
+    color: #36383D;
+    text-transform: uppercase;
+    font-weight: bold; }
+
+.Home__list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px; }
+
+.Pokemon__out {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  border: 1px dashed rgba(0, 0, 0, 0.5);
+  min-height: 200px; }
+  .Pokemon__out:before {
+    content: '?';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    font-size: 30px; }
+  .Pokemon__out > img {
+    height: 100px;
+    width: auto;
+    filter: grayscale(100%) brightness(0);
+    opacity: .5; }
+
+.Profile {
+  padding-top: 20px; }
+
+.Profile__info {
+  display: flex; }
+
+.Profile__sprite {
+  min-width: 96px;
+  min-height: 96px;
+  border-radius: 96px;
+  background-color: #fff; }
+
+.Profile__action {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  width: 100%;
+  min-height: 96px; }
+  .Profile__action > .Buttom {
+    margin-bottom: 0; }
+
+.Profile__name {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600; }
+
+.Profile__table {
+  width: 100%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #222;
+  border-radius: 10px;
+  border: 1px solid #001c4d;
+  border-bottom-width: 3px; }
+  .Profile__table th {
+    padding: 5px 10px;
+    text-align: left; }
+  .Profile__table tr {
+    border-bottom: 1px solid #ccc; }
+  .Profile__table td {
+    padding: 5px 10px; }
+  .Profile__table a {
+    color: #4D8DFF;
+    text-decoration: none; }
+    .Profile__table a:hover {
+      color: #015cff;
+      text-decoration: underline; }
+
+.Types__list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px; }
